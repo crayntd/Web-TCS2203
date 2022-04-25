@@ -17,7 +17,9 @@
         <div class = "container">
           <a href = "Home.php" class = "navbar-brand">Greenwich FPT</a>
           <div class = "navbar-nav">
-            <a href = "Home.php"> <i class="fa fa-home"></i> home</a>
+              <?php include('logincode.php'); ?><?php if(!isset($_SESSION['auth_user_id'])){?><a class="nav-link" href="#"><i class="fa fa-user"></i>Account</a><?php }else{?><a class="nav-link" href="login.php">Logout</a><?php }?>
+            <div class="nav-item"><a class="nav-link" href="#"><?php if(isset($_SESSION['authuser_name'])){echo $_SESSION['authuser_name'];}?></a></div>
+            <a href = "Home.php"><i class="fa fa-home"></i> Home</a>
             <div class="dropdown">
               <a class="dropbtn"><i class="fa fa-align-justify"></i>Type</a>
               <div class="dropdown-content">
